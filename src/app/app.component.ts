@@ -13,7 +13,7 @@ export class Hero {
 }
 
 const HEROES: Hero[] = [
-  
+
   {
     "id": 1011334,
     "name": "3-D Man",
@@ -236,28 +236,28 @@ const HEROES: Hero[] = [
   }
 ];
 
-
-
 @Component({
   selector: 'app-root',
   template: `
-  <pre>{{heroes | json}}</pre>
   <h1>{{title}}</h1>
   <h2>My Heroes</h2>
   <ul class="heroes">
-  <li *ngFor="let hero of heroes"
-  [class.selected]="hero === selectedHero"
-  (click)="onSelect(hero)">
-  <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
+    <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+      <div class="heroWrapper">
+        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" height="150px" />
+        <span class="name">{{hero.name}}</span>
+      </div>
+    </li>
   </ul>
   <div *ngIf="selectedHero">
-  <h2>{{selectedHero.name}} details!</h2>
-  <div><label>id: </label>{{selectedHero.id}}</div>
-  <div>
-  <label>name: </label>
-  <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-  </div>
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </div>
   </div>
   `,
   styles: [`
@@ -269,16 +269,15 @@ const HEROES: Hero[] = [
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: 15em;
     }
     .heroes li {
+      display: inline-flex;
       cursor: pointer;
       position: relative;
       left: 0;
       background-color: #EEE;
-      margin: .5em;
+      margin: .5em .5em .5em 0;
       padding: .3em 0;
-      height: 1.6em;
       border-radius: 4px;
     }
     .heroes li.selected:hover {
@@ -290,28 +289,21 @@ const HEROES: Hero[] = [
       background-color: #DDD;
       left: .1em;
     }
+    .heroes .heroWrapper {
+      display: flex;
+      flex-direction: column;
+    }
     .heroes .text {
       position: relative;
       top: -3px;
     }
-    .heroes .badge {
-      display: inline-block;
-      font-size: small;
-      color: white;
-      padding: 0.8em 0.7em 0 0.7em;
-      background-color: #607D8B;
-      line-height: 1em;
-      position: relative;
-      left: -1px;
-      top: -4px;
-      height: 1.8em;
+    .heroes .name {
       margin-right: .8em;
-      border-radius: 4px 0 0 4px;
     }
     `]
   })
   export class AppComponent {
-    title = 'Tour of Heroes';
+    title = `BlueOrange's Marvel Application`;
     heroes = HEROES;
     selectedHero: Hero;
 
