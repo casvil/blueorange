@@ -246,7 +246,7 @@ const HEROES: Hero[] = [
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)">
       <div class="heroWrapper">
-        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" height="150px" />
+        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
         <span class="name">{{hero.name}}</span>
       </div>
     </li>
@@ -266,6 +266,9 @@ const HEROES: Hero[] = [
       color: white;
     }
     .heroes {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
@@ -276,9 +279,10 @@ const HEROES: Hero[] = [
       position: relative;
       left: 0;
       background-color: #EEE;
-      margin: .5em .5em .5em 0;
+      margin: 1em 4.1em;
       padding: .3em 0;
       border-radius: 4px;
+      max-width: 155px;
     }
     .heroes li.selected:hover {
       background-color: #BBD8DC !important;
@@ -292,6 +296,10 @@ const HEROES: Hero[] = [
     .heroes .heroWrapper {
       display: flex;
       flex-direction: column;
+    }
+    .heroes .heroWrapper img{
+      width: 155px;
+      height: 155px;
     }
     .heroes .text {
       position: relative;
