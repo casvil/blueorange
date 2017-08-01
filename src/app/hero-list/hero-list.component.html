@@ -1,0 +1,10 @@
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+  [class.selected]="hero === selectedHero"
+  (click)="onSelect(hero)">
+    <div class="heroWrapper">
+      <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+      <span class="name">{{hero.name}}</span>
+    </div>
+  </li>
+</ul>
