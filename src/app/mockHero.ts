@@ -1,17 +1,4 @@
-export class Hero {
-  id: number;
-  name: string;
-  description: string;
-  modified: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-  resourceURI: string;
-}
-
-export const HEROES: Hero[] = [
-
+export default [
   {
     "id": 1011334,
     "name": "3-D Man",
