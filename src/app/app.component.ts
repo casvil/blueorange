@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

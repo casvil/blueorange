@@ -6,38 +6,42 @@
   list-style-type: none;
   padding: 0;
 }
+
 .heroes li {
   display: inline-flex;
   cursor: pointer;
-  position: relative;
-  left: 0;
   background-color: #EEE;
   margin: 1em 4.1em;
-  padding: .3em 0;
   border-radius: 4px;
-  max-width: 155px;
+  max-width: 200px;
 }
+
 .heroes li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;
 }
+
 .heroes li:hover {
-  color: #607D8B;
+  color: #F0141E;
   background-color: #DDD;
-  left: .1em;
 }
+
 .heroes .heroWrapper {
   display: flex;
   flex-direction: column;
 }
+
 .heroes .heroWrapper img {
-  width: 155px;
-  height: 155px;
+  width: 200px;
+  height: 200px;
 }
+
 .heroes .text {
   position: relative;
   top: -3px;
 }
+
 .heroes .name {
-  margin-right: .8em;
+  text-align: center;
+  padding: 7px 0;
 }
