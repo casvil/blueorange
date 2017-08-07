@@ -1,5 +1,5 @@
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"
+  <li *ngFor="let hero of this.store['source']['value']['heroes']"
   [class.selected]="hero === selectedHero"
   (click)="onSelect(hero)">
     <div class="heroWrapper">
