@@ -8,5 +8,5 @@ import { HeroListComponent } from './hero-list/hero-list.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = `BlueOrange's Application`;
+  title$ = `BlueOrange's Application`;
 }

@@ -17,10 +17,10 @@ import { GET_HEROES, ADD_HEROES } from '../reducers/heroes';
 })
 export class HeroListComponent implements OnInit {
   // heroes = MOCK_HEROES;
-  heroes: Observable<any>;
+  heroes$: Observable<any>;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
-    this.heroes = store.select<any>('heroes');
+    this.heroes$ = store.select<any>('heroes');
   }
 
   ngOnInit() {
