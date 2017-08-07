@@ -45,3 +45,13 @@
   text-align: center;
   padding: 7px 0;
 }
+
+@media (max-width: 680px) {
+  .heroes li {
+    max-width: none;
+  }
+  .heroes .heroWrapper img {
+    width: 350px;
+    height: 350px;
+  }
+}
