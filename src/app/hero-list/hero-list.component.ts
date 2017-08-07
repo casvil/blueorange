@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import MOCK_HEROES from '../mockHero';
 import { HeroService } from '../hero.service';
+import API_KEY from '../../assets/apikey';
+// import MOCK_HEROES from '../mockHero';
 
 @Component({
   selector: 'hero-list',
@@ -16,7 +17,7 @@ export class HeroListComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heroService.fetchHeroes('characters?apikey=bce9abaecf8d59d49b87e725f2161042&limit=50')
+    this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&limit=50`)
     .then(heroes => this.heroes = heroes)
   }
 
