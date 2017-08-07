@@ -51,7 +51,7 @@
     max-width: none;
   }
   .heroes .heroWrapper img {
-    width: 350px;
-    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
   }
 }
