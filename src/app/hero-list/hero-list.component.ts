@@ -11,20 +11,25 @@ import { GET_HEROES, ADD_HEROES } from '../reducers/heroes';
   selector: 'hero-list',
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.css'],
-  providers: [HeroService]
 })
 export class HeroListComponent implements OnInit {
   // heroes = MOCK_HEROES;
   heroes$: Observable<any>;
+  heroes: any;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
+    
+    this.heroes$.subscribe(heroes => {
+      this.heroes = heroes;
+    });
   }
 
   ngOnInit() {
     this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&limit=50`)
     // .then(heroes => this.heroes = heroes)
-    .then(heroes => this.store.dispatch({ type: GET_HEROES, action: heroes}))
+    .then(heroes => this.store.dispatch({ type: GET_HEROES, action: heroes}));
+
   }
 
   // addHeroes() {

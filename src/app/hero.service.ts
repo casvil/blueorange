@@ -9,7 +9,7 @@ export class HeroService {
   constructor(private http: Http) { }
 
   handleResponse(response:any) {
-    console.log(response.data.results)
+    // console.log(response.data.results)
     return response.data.results;
   }
 
