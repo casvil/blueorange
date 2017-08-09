@@ -7,8 +7,6 @@ import API_KEY from '../../assets/apikey';
 import { AppState } from '../state/app-state';
 import { GET_HEROES, ADD_HEROES } from '../reducers/heroes';
 
-
-
 @Component({
   selector: 'hero-list',
   templateUrl: './hero-list.component.html',
@@ -28,5 +26,9 @@ export class HeroListComponent implements OnInit {
     // .then(heroes => this.heroes = heroes)
     .then(heroes => this.store.dispatch({ type: GET_HEROES, action: heroes}))
   }
+
+  // addHeroes() {
+  //
+  // }
 
 }
