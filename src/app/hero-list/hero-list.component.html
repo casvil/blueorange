@@ -1,11 +1,16 @@
 <md-sidenav-container detect-scroll (onScroll)="handleScroll($event)" class="container">
   <md-sidenav #sidenav class="sidenav">
     <img style="width:100%;" src="http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" />
+    <div class="content">
+      <h1>selectedHero.name</h1>
+      <p>Description: selectedHero.description</p>
+      <h2>Related Heroes</h2>
+    </div>
   </md-sidenav>
   <div class="sidenav-content">
     <ul class="heroes">
-      <li *ngFor="let hero of heroes">
-        <button class="heroWrapper" type="button" md-button (click)="sidenav.open()">
+      <li *ngFor="let hero of heroes['heroes']">
+        <button id="{{hero.id}}" class="heroWrapper" type="button" md-button (click)="sidenav.open()" (click)="handleSidenav($event)">
           <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
           <span class="name">{{hero.name}}</span>
         </button>
