@@ -1,52 +1,52 @@
+button {
+  margin: 0;
+  padding: 0;
+}
+
 .heroes {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
+  padding: 0 10em;
 }
 
 .heroes li {
-  display: inline-flex;
-  cursor: pointer;
-  background-color: #EEE;
-  margin: 1em 4.1em;
-  border-radius: 4px;
-  max-width: 200px;
+  margin: 0em 1em 2em 1em;
 }
 
-.heroes li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
-}
-
-.heroes li:hover {
-  color: #F0141E;
-  background-color: #DDD;
-}
-
-.heroes .heroWrapper {
+.heroWrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(240, 20, 30);
+  align-items: center;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: rgb(240, 20, 30);
 }
 
-.heroes .heroWrapper img {
+.heroWrapper img {
   width: 200px;
   height: 200px;
 }
 
-.heroes .text {
-  position: relative;
-  top: -3px;
+.heroes .name {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 12px;
 }
 
-.heroes .name {
-  text-align: center;
-  padding: 7px 0;
+.sidenav {
+  width: 18%;
+  background-color: white;
 }
 
 @media (max-width: 680px) {
+  .sidenav {
+    width: 50%;
+  }
   .heroes li {
     max-width: none;
   }

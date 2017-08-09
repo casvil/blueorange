@@ -1,3 +1,14 @@
 .app {
   font-family: sans-serif;
 }
+
+.header {
+  padding: 15px;
+  background-color: rgb(240,20,30);
+  color: rgb(10,10,10);
+}
+
+.title {
+  color: rgb(240,20,30);
+  margin-left: 15px;
+}

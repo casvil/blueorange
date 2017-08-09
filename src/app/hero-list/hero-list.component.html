@@ -1,10 +1,15 @@
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-  [class.selected]="hero === selectedHero"
-  (click)="onSelect(hero)">
-    <div class="heroWrapper">
-      <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
-      <span class="name">{{hero.name}}</span>
-    </div>
-  </li>
-</ul>
+<md-sidenav-container class="container">
+  <md-sidenav #sidenav class="sidenav">
+    Jolly good!
+  </md-sidenav>
+  <div class="sidenav-content">
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <button class="heroWrapper" type="button" md-button (click)="sidenav.open()">
+          <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+          <span class="name">{{hero.name}}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</md-sidenav-container>

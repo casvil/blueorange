@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { HeroService } from '../hero.service';
@@ -19,7 +19,7 @@ export class HeroListComponent implements OnInit {
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
-    
+
     this.heroes$.subscribe(heroes => {
       this.heroes = heroes;
     });

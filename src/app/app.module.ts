@@ -4,30 +4,28 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// import { MdSidenavModule } from '@angular/material';
+import { MdSidenavModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { heroesReducer } from './reducers/heroes';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroService } from './hero.service';
-// import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
-    // SidenavComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    // MdSidenavModule
+    MdSidenavModule,
     StoreModule.forRoot({ heroes: heroesReducer }),
     StoreDevtoolsModule.instrument({
-      maxAge: 5 //  Retains last 25 states
+      maxAge: 25 //  Retains last 25 states
     })
   ],
   providers: [HeroService],
