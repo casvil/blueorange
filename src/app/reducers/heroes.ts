@@ -9,7 +9,7 @@ export function heroesReducer(state: Array<any> = [], action: Action) {
     return action["action"];
 
     case ADD_HEROES:
-    return state;
+    return state.concat(action["action"]);
 
     default:
     return state;

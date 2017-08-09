@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MdSidenavModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollEventModule } from 'ngx-scroll-event';
 
 import { AppComponent } from './app.component';
 import { heroesReducer } from './reducers/heroes';
@@ -26,7 +27,8 @@ import { HeroService } from './hero.service';
     StoreModule.forRoot({ heroes: heroesReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25 //  Retains last 25 states
-    })
+    }),
+    ScrollEventModule,
   ],
   providers: [HeroService],
   bootstrap: [AppComponent],
