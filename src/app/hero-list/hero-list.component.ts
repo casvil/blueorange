@@ -23,17 +23,11 @@ export class HeroListComponent implements OnInit {
   heroes: any;
   throttledScroll: any;
   heroCounter: number;
-  show: boolean = false;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
 
     this.heroes$.subscribe(heroes => {
-      if (heroes.searchedHeroes && heroes.searchedHeroes.length) {
-        this.show = true;
-      } else {
-        this.show = false;
-      }
       this.heroes = heroes;
     });
   }
