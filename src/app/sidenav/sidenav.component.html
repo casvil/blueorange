@@ -3,8 +3,8 @@
     <button class="close" (click)="this.closeSidenav.emit()">X</button>
     <img style="width:100%;" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
     <div class="sidenav-text">
-      <span class="name">{{hero.name}}</span>
-      <p>Description: {{hero.description}}</p>
+      <h1 class="name">{{hero.name}}</h1>
+      <span>{{hero.description || "No description"}}</span>
       <h2>Related Heroes</h2>
     </div>
   </div>

@@ -13,12 +13,13 @@ import { SEARCH_HEROES } from '../reducers/heroes';
 })
 export class SearchComponent implements OnInit {
   heroes$: Observable<any>;
+  heroes: any;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
 
     this.heroes$.subscribe(heroes => {
-      // this.heroes = heroes;
+      this.heroes = heroes;
     });
   }
 
@@ -30,7 +31,6 @@ export class SearchComponent implements OnInit {
 
   private searchHeroes(searchValue: string) {
     if(searchValue === "") return this.store.dispatch({ type: SEARCH_HEROES, action: []})
-
     this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&nameStartsWith=${searchValue}&limit=50`)
     .then(heroes => this.store.dispatch({ type: SEARCH_HEROES, action: heroes}))
   }

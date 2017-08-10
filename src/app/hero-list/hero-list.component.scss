@@ -39,19 +39,7 @@ button {
   font-size: 13px;
 }
 
-.sidenav {
-  width: 18%;
-  background-color: white;
-}
-
-.sidenav-detail {
-  list-style: none;
-}
-
 @media (max-width: 680px) {
-  .sidenav {
-    width: 50%;
-  }
   .heroes li {
     max-width: none;
   }
