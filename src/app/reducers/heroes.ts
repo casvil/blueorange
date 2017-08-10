@@ -13,7 +13,7 @@ export function heroesReducer(state: any = {}, action: Action) {
     return Object.assign({}, { heroes: state.heroes.concat(action["action"]) });
 
     case SELECT_HERO:
-    // console.log('action', action["action"])
+    console.log('action', action["action"])
     return Object.assign({}, ...state, { selectedHero: action["action"]} );
 
     default:

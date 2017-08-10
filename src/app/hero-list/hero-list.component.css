@@ -43,6 +43,10 @@ button {
   background-color: white;
 }
 
+.sidenav-detail {
+  list-style: none;
+}
+
 @media (max-width: 680px) {
   .sidenav {
     width: 50%;

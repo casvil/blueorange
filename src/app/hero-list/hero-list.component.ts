@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { HeroService } from '../hero.service';
@@ -20,14 +20,12 @@ export class HeroListComponent implements OnInit {
   heroes: any;
   throttledScroll: any;
   heroCounter: number;
-  selectedHero: object;
-  @ViewChildren('sidenav') sidenav;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
-    this.selectedHero = store.select<any>('selectedHero');
 
     this.heroes$.subscribe(heroes => {
+      console.log(heroes)
       this.heroes = heroes;
     });
   }
@@ -48,14 +46,13 @@ export class HeroListComponent implements OnInit {
   }
 
   private addHeroes() {
-    console.log(this.heroCounter)
     this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&offset=${this.heroCounter + 50}&limit=50`)
     .then(heroes => this.store.dispatch({ type: ADD_HEROES, action: heroes}))
     .then(heroes => this.heroCounter += this.heroes["heroes"].length);
   }
 
   private handleSidenav(event) {
-    let selectedHero = this.heroes.filter((hero, index) => {
+    let selectedHero = this.heroes["heroes"].filter((hero, index) => {
       if (hero.id.toString() === event.currentTarget.id) return hero;
     }, {});
 
