@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { HeroService } from '../hero.service';
@@ -20,12 +21,17 @@ export class HeroListComponent implements OnInit {
   heroes: any;
   throttledScroll: any;
   heroCounter: number;
+  show: boolean = false;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
 
     this.heroes$.subscribe(heroes => {
-      console.log(heroes)
+      if (heroes.searchedHeroes && heroes.searchedHeroes.length) {
+        this.show = true;
+      } else {
+        this.show = false;
+      }
       this.heroes = heroes;
     });
   }
@@ -36,6 +42,7 @@ export class HeroListComponent implements OnInit {
     .then(heroes => this.store.dispatch({ type: GET_HEROES, action: heroes}))
     .then(() => this.heroCounter = this.heroes["heroes"].length);
 
+    // throttle when reaching bottom for new request to the Marvel API
     this.throttledScroll = _.throttle(this.addHeroes, 5000);
   }
 
@@ -51,12 +58,11 @@ export class HeroListComponent implements OnInit {
     .then(heroes => this.heroCounter += this.heroes["heroes"].length);
   }
 
-  private handleSidenav(event) {
+  private handleSidenav(event: any) {
     let selectedHero = this.heroes["heroes"].filter((hero, index) => {
       if (hero.id.toString() === event.currentTarget.id) return hero;
     }, {});
 
     this.store.dispatch({ type: SELECT_HERO, action: selectedHero });
   }
-
 }

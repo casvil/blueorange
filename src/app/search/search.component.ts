@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { AppState } from '../state/app-state';
+import { HeroService } from '../hero.service';
+import API_KEY from '../../assets/apikey';
+import { SEARCH_HEROES } from '../reducers/heroes';
 
 @Component({
   selector: 'app-search',
@@ -6,15 +12,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  values = '';
+  heroes$: Observable<any>;
 
-  constructor() { }
+  constructor(private heroService: HeroService, private store: Store<AppState>) {
+    this.heroes$ = store.select<any>('heroes');
 
-  ngOnInit() {
+    this.heroes$.subscribe(heroes => {
+      // this.heroes = heroes;
+    });
   }
 
+  ngOnInit() {}
+
   onKey(event: any) {
-    this.values = event.target.value;
-    console.log(this.values)
+    this.searchHeroes(event.target.value)
+  }
+
+  private searchHeroes(searchValue: string) {
+    if(searchValue === "") return this.store.dispatch({ type: SEARCH_HEROES, action: []})
+
+    this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&nameStartsWith=${searchValue}&limit=50`)
+    .then(heroes => this.store.dispatch({ type: SEARCH_HEROES, action: heroes}))
   }
 }

@@ -10,13 +10,26 @@
     </div>
   </md-sidenav>
   <div class="sidenav-content">
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes['heroes']">
-        <button id="{{hero.id}}" class="heroWrapper" type="button" md-button (click)="sidenav.open()" (click)="handleSidenav($event)">
-          <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
-          <span class="name">{{hero.name}}</span>
-        </button>
-      </li>
-    </ul>
+    <div *ngIf="show" style="color:white;">
+      <h1>SEARCH RESULTS:</h1>
+      <ul class="heroes">
+        <li *ngFor="let hero of heroes['searchedHeroes']">
+          <button id="{{hero.id}}" class="heroWrapper" type="button" md-button (click)="sidenav.open()" (click)="handleSidenav($event)">
+            <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+            <span class="name">{{hero.name}}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!show" style="color:white;">
+      <ul class="heroes">
+        <li *ngFor="let hero of heroes['heroes']">
+          <button id="{{hero.id}}" class="heroWrapper" type="button" md-button (click)="sidenav.open()" (click)="handleSidenav($event)">
+            <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+            <span class="name">{{hero.name}}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </md-sidenav-container>
