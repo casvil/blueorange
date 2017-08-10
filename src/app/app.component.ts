@@ -8,10 +8,4 @@ import { Store } from '@ngrx/store';
 })
 export class AppComponent {
   title = `BlueOrange's Application`;
-  values = '';
-
-  onKey(event: any) {
-    this.values = event.target.value;
-    console.log(this.values)
-  }
 }

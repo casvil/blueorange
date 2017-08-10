@@ -12,11 +12,13 @@ import { AppComponent } from './app.component';
 import { heroesReducer } from './reducers/heroes';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroService } from './hero.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
