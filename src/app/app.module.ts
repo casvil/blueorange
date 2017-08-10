@@ -13,12 +13,14 @@ import { heroesReducer } from './reducers/heroes';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroService } from './hero.service';
 import { SearchComponent } from './search/search.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     SearchComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

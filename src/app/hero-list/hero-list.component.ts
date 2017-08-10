@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -11,11 +11,13 @@ import { ScrollEvent } from 'ngx-scroll-event';
 import _ from 'underscore';
 
 @Component({
-  selector: 'hero-list',
+  selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.css'],
 })
 export class HeroListComponent implements OnInit {
+
+  @Output() toggleSidenav = new EventEmitter();
 
   heroes$: Observable<any>;
   heroes: any;
@@ -59,8 +61,10 @@ export class HeroListComponent implements OnInit {
   }
 
   private handleSidenav(event: any) {
+    this.toggleSidenav.emit();
+
     let selectedHero = this.heroes["heroes"].filter((hero, index) => {
-      if (hero.id.toString() === event.currentTarget.id) return hero;
+      if (hero.id === event.id) return hero;
     }, {});
 
     this.store.dispatch({ type: SELECT_HERO, action: selectedHero });
