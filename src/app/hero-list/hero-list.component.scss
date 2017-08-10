@@ -7,13 +7,13 @@ button {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  margin: 0 0 2em 0;
+  margin: 0 10px;
   list-style-type: none;
-  padding: 0 10em;
+  -webkit-padding-start: 0;
 }
 
 .heroes li {
-  margin: 0em 1em 2em 1em;
+  margin: 0em 15px 20px 15px;
 }
 
 .heroWrapper {
@@ -24,6 +24,10 @@ button {
   align-items: center;
   border-radius: 4px;
   background-color: rgb(240, 20, 30);
+}
+
+.heroWrapper:hover {
+  opacity: 0.8;
 }
 
 .heroWrapper img {
@@ -37,14 +41,18 @@ button {
   padding: 10px 0;
   text-align: center;
   font-size: 13px;
+  max-width: 199px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1055px) {
+  .heroes {
+    padding: 0 1em;
+  }
   .heroes li {
     max-width: none;
   }
   .heroes .heroWrapper img {
-    min-width: 350px;
-    min-height: 350px;
+    min-width: 250px;
+    min-height: 250px;
   }
 }

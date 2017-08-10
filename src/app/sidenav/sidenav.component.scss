@@ -2,6 +2,8 @@ $primary-color: rgb(240,20,30);
 $secondary-color: rgb(10,10,10);
 $sidebar-color: rgb(25,25,25);
 $white: rgb(240,240,240);
+$img-width: 250px;
+$img-height: 250px;
 
 :host {
   background-color: $sidebar-color;
@@ -11,12 +13,26 @@ $white: rgb(240,240,240);
   top: 0;
   right: 0;
   bottom: 0;
-  width: 250px;
+  width: $img-width;
   z-index: 9999;
+}
+
+.sidenav-img {
+  width: $img-width;
+  height: $img-height;
 }
 
 .sidenav-text {
   padding: 0 1.5em;
+}
+
+.sidenav-more {
+  width: 100%;
+  padding: 7px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $white;
 }
 
 .close {
@@ -24,8 +40,22 @@ $white: rgb(240,240,240);
   right: 0;
   margin: 5px;
   font-weight: bold;
-  border-radius: 15px;
-  border: 1px solid red;
+  border-radius: 11px;
+  border-color: $primary-color;
   color: $primary-color;
   background-color: $white;
+}
+
+.related-hero {
+  display: inline-flex;
+  border: 1px solid $white;
+  width: 14px;
+  margin-bottom: 25px;
+}
+
+.related-hero div {
+  border-top: 1px solid $white;
+  margin-top: 12px;
+  width: 14px;
+  height: 8px;
 }
