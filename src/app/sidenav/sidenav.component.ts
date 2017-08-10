@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { AppState } from '../state/app-state';
@@ -25,10 +25,5 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // handleSidenav() {
-  //   console.log('close sidenav')
-  //   this.closeSidenav.emit();
-  // }
-
+  
 }

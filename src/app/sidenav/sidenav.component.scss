@@ -18,6 +18,10 @@
 .close {
   position: absolute;
   right: 0;
-  margin: 3px;
+  margin: 5px;
+  font-weight: bold;
   border-radius: 15px;
+  border: 1px solid red;
+  color: rgb(240,20,30);
+  background-color: rgb(240,240,240);
 }
