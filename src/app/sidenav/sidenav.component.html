@@ -1,10 +1,10 @@
-HOLA
 <div *ngIf="hero['selectedHero']">
-  HOLA2
   <div *ngFor="let hero of hero['selectedHero']">
     <img style="width:100%;" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
-    <span class="name">{{hero.name}}</span>
-    <p>Description: {{hero.description}}</p>
-    <h2>Related Heroes</h2>
+    <div class="sidenav-text">
+      <span class="name">{{hero.name}}</span>
+      <p>Description: {{hero.description}}</p>
+      <h2>Related Heroes</h2>
+    </div>
   </div>
 </div>

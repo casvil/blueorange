@@ -1,5 +1,5 @@
 :host {
-  background: #1a2580;
+  background-color: rgb(25,25,25);
   color: #fff;
   position: fixed;
   left: auto;
@@ -11,10 +11,6 @@
   z-index: 9999;
 }
 
-ul {
-  font-size: 18px;
-  line-height: 3;
-  font-weight: 400;
-  padding-top: 50px;
-  list-style: none;
+.sidenav-text {
+  padding: 1.5em 1.5em 0 1.5em ;
 }
