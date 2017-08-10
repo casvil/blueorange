@@ -1,24 +1,28 @@
-/* MARVEL RED: rgb(240,20,30) */
+$font-family: Helvetica, sans-serif;
+$primary-color: rgb(240,20,30);
+$secondary-color: rgb(10,10,10);
+$sidebar-color: rgb(25,25,25);
+$white: rgb(240,240,240);
 
 .app {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: $font-family;
 }
 
 .header {
   padding: 0.83em;
-  background-color: rgb(240,20,30);
-  color: rgb(10,10,10);
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   padding: 0 2em 0 0.83em;
-  border-bottom: 1px solid rgb(240,20,30);
+  border-bottom: 1px solid $secondary-color;
   margin-bottom: 1.66em;
   align-items: center;
 }
 
 .title {
-  color: rgb(240,20,30);
+  color: $primary-color;
 }

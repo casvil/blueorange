@@ -1,5 +1,10 @@
+$primary-color: rgb(240,20,30);
+$secondary-color: rgb(10,10,10);
+$sidebar-color: rgb(25,25,25);
+$white: rgb(240,240,240);
+
 :host {
-  background-color: rgb(25,25,25);
+  background-color: $sidebar-color;
   color: #fff;
   position: fixed;
   left: auto;
@@ -22,6 +27,6 @@
   font-weight: bold;
   border-radius: 15px;
   border: 1px solid red;
-  color: rgb(240,20,30);
-  background-color: rgb(240,240,240);
+  color: $primary-color;
+  background-color: $white;
 }

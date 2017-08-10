@@ -1,6 +1,11 @@
+$primary-color: rgb(240,20,30);
+$secondary-color: rgb(10,10,10);
+$sidebar-color: rgb(25,25,25);
+$white: rgb(240,240,240);
+
 input {
-  background-color: rgb(240,20,30);
-  color: rgb(240,240,240);
+  background-color: $primary-color;
+  color: $white;
   border: none;
   outline: none;
   padding: 10px;
@@ -8,11 +13,11 @@ input {
 }
 
 ::-webkit-input-placeholder {
-  color: rgb(240,240,240);
+  color: $white;
   padding-left: 8px;
 }
 
 ::-moz-placeholder {
-  color: rgb(240,240,240);
+  color: $white;
   padding-left: 8px;
 }
