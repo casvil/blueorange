@@ -6,7 +6,7 @@ import { AppState } from '../state/app-state';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
   hero$: Observable<any>;
@@ -16,7 +16,6 @@ export class SidenavComponent implements OnInit {
     this.hero$ = store.select<any>('heroes');
 
     this.hero$.subscribe(hero => {
-      // console.log('emitted ', hero)
       this.hero = hero;
     });
   }

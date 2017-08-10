@@ -5,7 +5,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('in', style({
