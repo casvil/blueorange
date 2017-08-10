@@ -1,3 +1,5 @@
+/* MARVEL RED: rgb(240,20,30) */
+
 .app {
   font-family: sans-serif;
 }
@@ -6,6 +8,15 @@
   padding: 15px;
   background-color: rgb(240,20,30);
   color: rgb(10,10,10);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.83em;
+  border-bottom: 1px solid rgb(240,20,30);
+  margin-bottom: 1.66em;
+  align-items: center;
 }
 
 .title {

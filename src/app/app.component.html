@@ -2,6 +2,10 @@
   <div class="header">
     <h1>{{title}}</h1>
   </div>
-  <h2 class="title">Marvel Heroes</h2>
+  <div class="row">
+    <h2 class="title">Marvel Heroes</h2>
+    <!-- TODO: create a component to extract the logic from the main component -->
+    <input (keyup)="onKey($event)" value="SEARCH">
+  </div>
   <hero-list></hero-list>
 </div>
