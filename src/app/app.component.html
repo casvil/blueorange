@@ -6,6 +6,6 @@
     <h2 class="title">Marvel Heroes</h2>
     <app-search></app-search>
   </div>
-  <app-sidenav [@slideInOut]="sidenavState"></app-sidenav>
+  <app-sidenav (closeSidenav)="closeSidenav()" [@slideInOut]="sidenavState"></app-sidenav>
   <app-hero-list (toggleSidenav)="toggleSidenav()"></app-hero-list>
 </div>

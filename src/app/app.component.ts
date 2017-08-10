@@ -24,6 +24,10 @@ export class AppComponent {
   sidenavState: string = 'out';
 
   toggleSidenav() {
+    this.sidenavState = this.sidenavState === 'out' ? 'in' : 'in';
+  }
+
+  closeSidenav() {
     this.sidenavState = this.sidenavState === 'out' ? 'in' : 'out';
   }
 }
