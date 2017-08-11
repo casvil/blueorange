@@ -45,14 +45,11 @@ button {
 }
 
 @media (max-width: 1055px) {
-  .heroes {
-    padding: 0 1em;
-  }
   .heroes li {
     max-width: none;
   }
   .heroes .heroWrapper img {
-    min-width: 250px;
-    min-height: 250px;
+    width: 100%;
+    height: 100%;
   }
 }
