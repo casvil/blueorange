@@ -6,10 +6,14 @@
       <h1 class="name">{{hero.name}}</h1>
       <span>{{hero.description || 'No description'}}</span>
       <h2>Related Heroes</h2>
-      <div class="related-hero"><div></div></div>
-      <div class="related-hero"><div></div></div>
-      <div class="related-hero"><div></div></div>
-      <div class="related-hero"><div></div></div>
+      <div class="related-hero" *ngFor="let relatedHero of mockRelatedHeroes">
+        <img src="{{relatedHero.thumbnail.path}}.{{relatedHero.thumbnail.extension}}" />
+
+        <!-- <div class="related-hero"><div></div></div>
+        <div class="related-hero"><div></div></div>
+        <div class="related-hero"><div></div></div>
+        <div class="related-hero"><div></div></div> -->
+      </div>
       <button class="sidenav-more">More Details</button>
     </div>
   </div>

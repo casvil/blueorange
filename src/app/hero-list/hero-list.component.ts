@@ -35,6 +35,7 @@ export class HeroListComponent implements OnInit {
         this.show = false;
       }
       this.heroes = heroes;
+      console.log(heroes)
     });
   }
 
