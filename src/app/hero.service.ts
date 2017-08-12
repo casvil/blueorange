@@ -9,7 +9,6 @@ export class HeroService {
   constructor(private http: Http) { }
 
   handleResponse(response:any) {
-    // console.log(response.data.results)
     return response.data.results;
   }
 
@@ -20,7 +19,6 @@ export class HeroService {
       return response.json();
     })
     .then(response => {
-      // treat response to only get the results and store them into redux state
       return this.handleResponse(response);
     })
     .catch(this.handleError)
