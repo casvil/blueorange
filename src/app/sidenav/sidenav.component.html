@@ -1,6 +1,6 @@
+<button class="close" (click)="this.closeSidenav.emit()">X</button>
 <div *ngIf="hero['selectedHero']">
   <div *ngFor="let hero of hero['selectedHero']">
-    <button class="close" (click)="this.closeSidenav.emit()">X</button>
     <img class="sidenav-img" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
     <div class="sidenav-text">
       <h1 class="name">{{hero.name}}</h1>
