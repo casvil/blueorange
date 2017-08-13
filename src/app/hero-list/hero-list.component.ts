@@ -42,7 +42,7 @@ export class HeroListComponent implements OnInit {
     .then(heroes => this.store.dispatch({ type: GET_HEROES, action: heroes}))
     .then(() => this.heroCounter = this.heroes["heroes"].length);
 
-    this.throttledScroll = _.throttle(this.addHeroes, 5000);
+    this.throttledScroll = _.throttle(this.addHeroes, 3000);
   }
 
   private handleScroll(event: ScrollEvent) {
