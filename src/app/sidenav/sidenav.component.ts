@@ -50,7 +50,7 @@ export class SidenavComponent implements OnChanges {
 
   private relatedHeroes(id: any) {
     // https://gateway.marvel.com:443/v1/public/characters/1011334/comics?apikey=bce9abaecf8d59d49b87e725f2161042
-    this.heroService.fetchHeroes(`characters/${id}/comics?apikey=${API_KEY}&limit=50`)
+    this.heroService.fetchHeroes(`characters/${id}/comics?apikey=${API_KEY}&limit=4`)
     .then(heroes => {
       console.log('related heroes response', heroes)
       this.store.dispatch({ type: RELATED_HEROES, action: { heroe: id, heroes: heroes}})
