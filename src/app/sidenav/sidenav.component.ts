@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { NgIf } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
@@ -14,7 +14,6 @@ import { RELATED_HEROES } from '../reducers/heroes';
 })
 export class SidenavComponent implements OnChanges {
 
-  @Input() prop: number;
   @Output() closeSidenav = new EventEmitter();
 
   heroes$: Observable<any>;
@@ -28,6 +27,7 @@ export class SidenavComponent implements OnChanges {
         if(hero["relatedHeroes"] === undefined) {
           this.relatedHeroes(hero["selectedHero"][0]["id"])
         } else {
+          console.log(hero["selectedHero"])
           if(hero["selectedHero"][0]["id"] !== hero["relatedHeroes"]["heroe"]) {
             this.relatedHeroes(hero["selectedHero"][0]["id"])
           }

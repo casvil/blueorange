@@ -22,16 +22,16 @@ export class HeroListComponent implements OnInit {
   heroes: any;
   throttledScroll: any;
   heroCounter: number;
-  show: boolean;
+  search: boolean;
 
   constructor(private heroService: HeroService, private store: Store<AppState>) {
     this.heroes$ = store.select<any>('heroes');
 
     this.heroes$.subscribe(heroes => {
       if (heroes.searchedHeroes && heroes.searchedHeroes.length) {
-        this.show = true;
+        this.search = true;
       } else {
-        this.show = false;
+        this.search = false;
       }
       this.heroes = heroes;
     });
@@ -63,6 +63,12 @@ export class HeroListComponent implements OnInit {
     let selectedHero = this.heroes["heroes"].filter((hero, index) => {
       if (hero.id === event.id) return hero;
     }, {});
+
+    if(selectedHero.length === 0) {
+      selectedHero = this.heroes["searchedHeroes"].filter((hero, index) => {
+        if (hero.id === event.id) return hero;
+      }, {});
+    }
 
     this.store.dispatch({ type: SELECT_HERO, action: selectedHero });
   }

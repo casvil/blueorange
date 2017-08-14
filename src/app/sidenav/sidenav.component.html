@@ -6,9 +6,13 @@
 </div>
 
 <div class="sidenav-text">
-  <h1 class="name">{{hero.name}}</h1>
-  <span>{{hero.description}}</span>
-  <h2>Related Heroes</h2>
+  <div *ngIf="hero['selectedHero']">
+    <div *ngFor="let hero of hero['selectedHero']">
+      <h1 class="name">{{hero.name}}</h1>
+      <span>{{hero.description}}</span>
+      <h2>Related Heroes</h2>
+    </div>
+  </div>
   <div *ngIf="hero['relatedHeroes']">
     <div *ngIf="!hero['relatedHeroes']['results']" class="related-hero"><span>No related Heroes :(</span></div>
     <div *ngFor="let relatedHero of this.hero['relatedHeroes']['heroes']" class="related-hero" >

@@ -1,7 +1,6 @@
 <div detect-scroll (onScroll)="handleScroll($event)" class="container">
-  <!-- CONTENT - HEROES -->
-  <div class="sidenav-content">
-    <div *ngIf="show">
+  <div class="content">
+    <div *ngIf="search">
       <ul class="heroes">
         <li *ngFor="let hero of heroes['searchedHeroes']">
           <button (click)="handleSidenav(hero)" class="heroWrapper">
@@ -11,8 +10,7 @@
         </li>
       </ul>
     </div>
-    <!-- CONTENT - SEARCHED HEROES -->
-    <div *ngIf="!show">
+    <div *ngIf="!search">
       <ul class="heroes">
         <li *ngFor="let hero of heroes['heroes']">
           <button (click)="handleSidenav(hero)" class="heroWrapper">
