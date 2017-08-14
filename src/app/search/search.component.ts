@@ -33,7 +33,6 @@ export class SearchComponent implements OnInit {
     if(searchValue === "") {
       return setTimeout(() => this.store.dispatch({ type: SEARCH_HEROES, action: []}), 500)
     }
-
     this.heroService.fetchHeroes(`characters?apikey=${API_KEY}&nameStartsWith=${searchValue}&limit=50`)
     .then(heroes => this.store.dispatch({ type: SEARCH_HEROES, action: heroes}))
   }

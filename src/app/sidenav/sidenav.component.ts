@@ -27,7 +27,6 @@ export class SidenavComponent implements OnChanges {
         if(hero["relatedHeroes"] === undefined) {
           this.relatedHeroes(hero["selectedHero"][0]["id"])
         } else {
-          console.log(hero["selectedHero"])
           if(hero["selectedHero"][0]["id"] !== hero["relatedHeroes"]["heroe"]) {
             this.relatedHeroes(hero["selectedHero"][0]["id"])
           }

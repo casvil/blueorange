@@ -46,6 +46,11 @@ $img-height: 250px;
   background-color: $white;
 }
 
+.description {
+  max-height: 120px;
+  overflow: scroll;
+}
+
 .related-hero {
   display: inline-flex;
   margin-bottom: 18px;
@@ -55,4 +60,10 @@ $img-height: 250px;
 .related-hero span {
   font-weight: lighter;
   color: $primary-color;
+}
+
+span {
+  font-size: 14px;
+  max-height: 120px;
+  overflow: scroll;
 }
